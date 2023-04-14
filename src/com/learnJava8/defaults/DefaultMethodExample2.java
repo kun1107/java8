@@ -26,6 +26,14 @@ public class DefaultMethodExample2 {
         studentList.forEach(studentConsumer);
     }
 
+    public static void sortwithNullValues(List<Student> studentList){
+        Comparator<Student> studentComparator = Comparator.nullsFirst(nameComparator);
+        studentList.sort(studentComparator);
+        System.out.println("After sortwithNullValues:");
+        studentList.forEach(studentConsumer);
+
+    }
+
     public static void comparatorChaining(List<Student> studentList){
 
         studentList.sort(gradeComparator.thenComparing(nameComparator));
@@ -43,6 +51,7 @@ public class DefaultMethodExample2 {
 
         //sortByName(studentList);
         //sortByGPA(studentList);
-        comparatorChaining(studentList);
+        //comparatorChaining(studentList);
+        sortwithNullValues(studentList);
     }
 }
