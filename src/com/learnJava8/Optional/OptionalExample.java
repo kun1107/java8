@@ -17,9 +17,9 @@ public class OptionalExample {
     }
 
     public static Optional<String> getStudentNameOptional(){
-       /* Optional<Student> studentOptional =
-                Optional.ofNullable(StudentDataBase.studentSupplier.get());*/
-        Optional<Student> studentOptional = null;
+        Optional<Student> studentOptional =
+                Optional.ofNullable(StudentDataBase.studentSupplier.get());
+        //Optional<Student> studentOptional = null;
         if(studentOptional.isPresent()){
             return studentOptional.map(Student::getName);
         }

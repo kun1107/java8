@@ -2,14 +2,22 @@ package com.learnJava8.student;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 public class StudentDataBase {
 
     /*Utility method to return single student*/
     public static Supplier<Student> studentSupplier = ()-> {
-        return new Student("Adam",2,3.6, "male",
+        Bike bike = new Bike();
+        bike.setName("xyz");
+        bike.setModel("abc");
+
+        Student student = new Student("Adam",2,3.6, "male",
                 Arrays.asList("swimming", "basketball","volleyball"));
+        student.setOptionalBike(Optional.ofNullable(bike));
+
+        return student;
 
     };
 
