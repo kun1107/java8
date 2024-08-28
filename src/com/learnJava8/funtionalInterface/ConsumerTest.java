@@ -11,6 +11,8 @@ public class ConsumerTest {
     static Consumer<Student> c2 = student -> System.out.println(student);
     static Consumer<Student> c3 = student -> System.out.print(student.getName()+" ");
     static Consumer<Student> c4 = student -> System.out.println(student.getActivities());
+
+    static Consumer<Student> c5 = student -> System.out.println(student.getName()+""+student.getActivities());
     static List<Student> studentList =  StudentDataBase.getAllStudents();
 
     public static void printStudent(){
@@ -44,6 +46,8 @@ public class ConsumerTest {
         c1.accept("java8");
       //  printStudent();
         //printStudentAndActivity();
-        printStudentAndActivityWithCondition();
+        //printStudentAndActivityWithCondition();
+
+       studentList.forEach(c5);
     }
 }
